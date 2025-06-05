@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 
 namespace MoviesAPI.Entities
 {
@@ -13,6 +14,12 @@ namespace MoviesAPI.Entities
         [Required]
         [Range(1,100)]
         public decimal Price { get; set; }
+
+        //navigation property
+        [ValidateNever] 
+        public Genre? Genre { get; set; }
+        //foreign Key property
+        public int GenreId { get; set; }
 
         public DateOnly ReleaseDAte { get; set; }
     }
