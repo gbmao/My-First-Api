@@ -8,7 +8,7 @@ namespace MoviesAPI.Entities
         public int Id { get; set; }
 
         [Required]
-        [StringLength (40)]
+        [StringLength (50)]
         public required string Name { get; set; }
 
         [Required]
